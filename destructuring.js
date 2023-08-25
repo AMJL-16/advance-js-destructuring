@@ -48,14 +48,40 @@ let [, , maryNative, marySecondary] = languages;
 // the 2 commas in the square brackets skip the 2 first values in the array
 console.log(maryNative, marySecondary);
 
+  // when working with objects, destructuring subsets is even easier. see the example
+
+let languages2 = {
+  firstLanguage: 'english',
+  secondLanguage: 'french',
+  thirdLanguage: 'german',
+  fourthLanguage: 'japanese'
+};
+    /*Since the values in an object are represented by their property names,
+     I can destructure only the things I need, see below */
+let {firstLanguage, thirdLanguage } = languages2;
+console.log(firstLanguage, thirdLanguage);
 
 // Using rest parameter syntax
+let fruits = ['apple', 'orange', 'banana', 'peach', 'cherry'];
+let [favorite, secondFavorite, ...otherFruit] = fruits;
+console.log(favorite, secondFavorite, ...otherFruit);
+console.log(favorite);
+console.log(secondFavorite);
+console.log(otherFruit);
 
+    // same but with people 
 
-
-
-
-
+let people = {
+  brian: 'pizza of all kind',
+  anna: 'italian food',
+  sarah: 'asian food',
+  andrea: 'steak'
+};
+let {brian, anna, ...foodRest} = people;
+console.log(brian);
+console.log(anna);
+console.log(foodRest);
+console.log(brian, anna, foodRest);
 
 // challenge on destructuring
 let students = [
